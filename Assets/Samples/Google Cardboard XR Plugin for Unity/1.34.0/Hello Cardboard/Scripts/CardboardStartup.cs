@@ -27,19 +27,24 @@ public class CardboardStartup : MonoBehaviour
     /// <summary>
     /// Start is called before the first frame update.
     /// </summary>
+    private bool isDesktop => Application.isEditor || Application.platform != RuntimePlatform.Android;
     public void Start()
     {
+        if (isDesktop)
+        {
+            return;
+        }
         // Configures the app to not shut down the screen and sets the brightness to maximum.
         // Brightness control is expected to work only in iOS, see:
         // https://docs.unity3d.com/ScriptReference/Screen-brightness.html.
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.brightness = 1.0f;
 
-        // Checks if the device parameters are stored and scans them if not.
+        /* // Checks if the device parameters are stored and scans them if not.
         if (!Api.HasDeviceParams())
         {
             Api.ScanDeviceParams();
-        }
+        } */
     }
 
     /// <summary>
@@ -47,6 +52,10 @@ public class CardboardStartup : MonoBehaviour
     /// </summary>
     public void Update()
     {
+        if (isDesktop)
+        {
+            return;
+        }
         if (Api.IsGearButtonPressed)
         {
             Api.ScanDeviceParams();
