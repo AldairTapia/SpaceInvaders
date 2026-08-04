@@ -462,6 +462,7 @@ MonoBehaviour:
   rotateScript: {fileID: 6228934453183631236}
   speed: 3
   damage: 20
+  distanceToTarget: 70
 --- !u!1 &6049956520893902052
 GameObject:
   m_ObjectHideFlags: 0
