@@ -944,6 +944,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &573637089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573637091}
+  - component: {fileID: 573637090}
+  m_Layer: 0
+  m_Name: EnemiesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &573637090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573637089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4fcae8d3c5404449c1e285457fe5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemiesManager
+  levelManager: {fileID: 11400000, guid: dee68a18c90335a458e997091a4754cd, type: 2}
+  onEnemyDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+  target: {fileID: 230524784}
+  onAllEnemiesDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &573637091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573637089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.27398, y: 1.58702, z: 87.02768}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &764286277
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +1028,19 @@ MonoBehaviour:
   fadeAnimator: {fileID: 1898016142}
   onSceneStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 573637090}
+        m_TargetAssemblyTypeName: EnemiesManager, Assembly-CSharp
+        m_MethodName: SetLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &764286279
 Transform:
   m_ObjectHideFlags: 0
@@ -1533,9 +1597,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   target: {fileID: 230524784}
+  destroyAnimationName: Destroy
+  destroySoundName: asteroid_explode
   rotateScript: {fileID: 398978197}
   speed: 5
   damage: 20
+  distanceToTarget: 10
 --- !u!114 &1002648997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2985,3 +3052,4 @@ SceneRoots:
   - {fileID: 2069866585}
   - {fileID: 1187271383}
   - {fileID: 1002648994}
+  - {fileID: 573637091}
