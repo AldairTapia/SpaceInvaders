@@ -523,6 +523,7 @@ MonoBehaviour:
   target: {fileID: 0}
   destroyAnimationName: Destroy
   destroySoundName: Explosion
+  appearSoundName: asteroid_appear
   rotateScript: {fileID: 2659527877660392832}
   speed: 5
   damage: 20
