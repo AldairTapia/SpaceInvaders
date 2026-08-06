@@ -458,10 +458,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   target: {fileID: 0}
   destroyAnimationName: Destroy
-  destroySoundName: Asteroid_Destroy
+  destroySoundName: Asteroid_destroy
+  appearSoundName: 
   rotateScript: {fileID: 6228934453183631236}
   speed: 3
-  damage: 20
+  damage: 50
   distanceToTarget: 70
 --- !u!1 &6049956520893902052
 GameObject:

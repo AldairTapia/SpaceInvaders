@@ -21,6 +21,7 @@ public class Asteroid : Enemy
     {
         if (currentState == State.Active && target != null)
         {
+            transform.LookAt(target);
             Vector3 direction = (target.position - transform.position).normalized;
             transform.position += direction * speed * Time.deltaTime;
         }
