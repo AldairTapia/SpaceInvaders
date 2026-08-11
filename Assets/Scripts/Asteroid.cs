@@ -5,17 +5,12 @@ public class Asteroid : Enemy
     [SerializeField]
     private Rotate rotateScript;
     [SerializeField]
-    private float speed = 20f;
-    [SerializeField]
-    private float damage = 20f;
-    [SerializeField]
     private float distanceToTarget =10f;
     public override void OnEnable()
     {
         base.OnEnable();
         rotateScript.enabled = true;
         animator.Play("Idle", 0, 0f);
-        SoundManager.instance.Play("asteroid_appear");
     }
     private void Update()
     {
