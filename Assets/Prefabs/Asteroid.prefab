@@ -417,6 +417,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7589301131686965238}
+        m_TargetAssemblyTypeName: Asteroid, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &9186909553205083593
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -459,10 +471,10 @@ MonoBehaviour:
   target: {fileID: 0}
   destroyAnimationName: Destroy
   destroySoundName: Asteroid_destroy
-  appearSoundName: 
-  rotateScript: {fileID: 6228934453183631236}
+  appearSoundName: Asteroid_appear
   speed: 3
   damage: 50
+  rotateScript: {fileID: 6228934453183631236}
   distanceToTarget: 70
 --- !u!1 &6049956520893902052
 GameObject:
