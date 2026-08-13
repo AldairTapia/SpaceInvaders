@@ -17,6 +17,7 @@ public class EnemiesManager : MonoBehaviour
     public void SetLevel()
     {
         currentLevelData = levelManager.GetCurrentLevelData();
+        SoundManager.instance.PlayMusic(currentLevelData.musicname);
         foreach (EnemiesData enemyData in currentLevelData.enemiesData)
         {
             StartCoroutine(SpawnEnemy(enemyData));

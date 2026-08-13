@@ -43,6 +43,10 @@ public class Pool : MonoBehaviour
         poolStack.Push(obj);
         activeObjects.Remove(obj);
     }
+    public void InstantiateObjectOn(Transform parent)
+    {
+        InstantiateObject(parent.position, false);
+    }
     public void DeactivateAllObjects()
     {
         foreach (var obj in activeObjects)

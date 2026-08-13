@@ -6,6 +6,8 @@ public class WinScreen : MonoBehaviour
     [SerializeField]
     private UnityEvent onShowWinScreen;
     [SerializeField]
+    private UnityEvent onShowLoseScreen;
+    [SerializeField] 
     private TextMesh[] textMeshes;
     [SerializeField]
     private GameObject nextLevelButton;
@@ -36,9 +38,9 @@ public class WinScreen : MonoBehaviour
         if (isWinScreenShown) return;
         isWinScreenShown = false;
         ShowScreenAssets(true);
-        onShowWinScreen?.Invoke();
+        onShowLoseScreen?.Invoke();
         ChangeTextMeshes("You\nLose!");
-        nextLevelButton.SetActive(true);
+        nextLevelButton.SetActive(false);
         quitButton.SetActive(true);
     }
     private void ChangeTextMeshes(string text)
