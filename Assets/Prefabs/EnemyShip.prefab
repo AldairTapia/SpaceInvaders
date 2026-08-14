@@ -458,9 +458,9 @@ MonoBehaviour:
   destroySoundName: ShipDestroy
   appearSoundName: ShipAppear
   speed: 15
-  damage: 20
+  damage: 10
   distanceFromTarget: 25
-  pathLength: 300
+  pathLenght: 300
   bulletPrefab: {fileID: 898164639004429697, guid: 0bf936674b2f9384db7fd120584f5653, type: 3}
   bulletPivot: {fileID: 1604287632433779860}
   randomDistanceMultiplier: 0.3

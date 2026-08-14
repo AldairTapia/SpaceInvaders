@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-
+ 
 public class Health : MonoBehaviour
 {
     [SerializeField]
@@ -15,7 +15,6 @@ public class Health : MonoBehaviour
     private UnityEvent onReceiveDamage;
     [SerializeField]
     private UnityEvent onDie;
-    private bool isDead = false;
     public void InitializeHealth()
     {
         currentHealth = maxHealth;
@@ -28,9 +27,8 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        if (currentHealth <= 0 && !isDead)
+        if (currentHealth <= 0)
         {
-            isDead = true;
             currentHealth = 0;
             onDie?.Invoke();
         }
@@ -41,3 +39,4 @@ public class Health : MonoBehaviour
         UpdateBar();
     }
 }
+ 

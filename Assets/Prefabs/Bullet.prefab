@@ -275,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   speed: 100
+  tagToIgnore: Player
 --- !u!114 &120848192993147988
 MonoBehaviour:
   m_ObjectHideFlags: 0

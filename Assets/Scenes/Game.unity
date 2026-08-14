@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   healthSlider: {fileID: 838679640}
-  maxHealth: 200
+  maxHealth: 500
   onReceiveDamage:
     m_PersistentCalls:
       m_Calls:
@@ -425,6 +425,57 @@ MonoBehaviour:
           m_StringArgument: FadeIn
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 806325655}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayMusic
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: AquiVaElYouWin
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 806325655}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FadeIn
+          m_BoolArgument: 0
+        m_CallState: 2
+  onShowLoseScreen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 806325655}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayMusic
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: AquiVaElYouLose
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 806325655}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   textMeshes:
   - {fileID: 580545575}
   nextLevelButton: {fileID: 518645680}
@@ -432,8 +483,8 @@ MonoBehaviour:
   levelManager: {fileID: 11400000, guid: 0f2212018aeec0e4bb5ce2bff973433f, type: 2}
   screenAssets:
   - {fileID: 518645680}
-  - {fileID: 0}
   - {fileID: 580545573}
+  - {fileID: 1023351053}
 --- !u!4 &96908981
 Transform:
   m_ObjectHideFlags: 0
@@ -442,7 +493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96908979}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 512.8565, y: 0.00004, z: -2439.7842}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1310,18 +1361,6 @@ MonoBehaviour:
   onPointerClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 0f2212018aeec0e4bb5ce2bff973433f, type: 2}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: NextLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Game
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 751268874}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: GoToSceneWithFade
@@ -1334,9 +1373,21 @@ MonoBehaviour:
           m_StringArgument: Game
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 806325655}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MenuButton
+          m_BoolArgument: 0
+        m_CallState: 2
   onPointerExitAnimationName: OnExit
   onPointerEnterAnimationName: OnEnter
-  onPointerClickAnimationName: OnEnter
+  onPointerClickAnimationName: OnClick
   animator: {fileID: 518645684}
 --- !u!95 &518645684
 Animator:
@@ -1714,16 +1765,16 @@ MonoBehaviour:
   onSceneStarted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 61645170}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: InitializeHealth
-        m_Mode: 1
+      - m_Target: {fileID: 806325655}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMusic
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 935825058}
@@ -1738,16 +1789,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 806325655}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 5
+      - m_Target: {fileID: 61645170}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: InitializeHealth
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMusic
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &751268875
@@ -2150,7 +2201,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2176,7 +2227,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2829,6 +2880,18 @@ MonoBehaviour:
           m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 806325655}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MenuButton
+          m_BoolArgument: 0
+        m_CallState: 2
   onPointerExitAnimationName: OnExit
   onPointerEnterAnimationName: OnEnter
   onPointerClickAnimationName: OnEnter
@@ -2954,7 +3017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4294,5 +4357,5 @@ SceneRoots:
   - {fileID: 1037691192}
   - {fileID: 935825059}
   - {fileID: 61645167}
-  - {fileID: 96908981}
   - {fileID: 2062402984}
+  - {fileID: 96908981}

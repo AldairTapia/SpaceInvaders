@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
- 
+
 public class EnemiesManager : MonoBehaviour
 {
     [SerializeField]
@@ -16,7 +16,6 @@ public class EnemiesManager : MonoBehaviour
     private LevelData currentLevelData;
     public void SetLevel()
     {
-        enemiesDestroyed = 0;
         currentLevelData = levelManager.GetCurrentLevelData();
         SoundManager.instance.PlayMusic(currentLevelData.musicname);
         foreach (EnemiesData enemyData in currentLevelData.enemiesData)
@@ -37,11 +36,9 @@ public class EnemiesManager : MonoBehaviour
     {
         onEnemyDestroy?.Invoke(enemyTransform);
         enemiesDestroyed++;
-        Debug.Log(enemiesDestroyed);
         if (enemiesDestroyed >= currentLevelData.enemiesData.Length)
         {
             onAllEnemiesDestroyed?.Invoke();
         }
     }
 }
- 

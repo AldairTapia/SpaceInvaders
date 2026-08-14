@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
- 
+
 public class Enemy : MonoBehaviour
 {
     private Health health;
@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected float speed = 1f;
     [SerializeField]
-     protected float damage = 20f;
+    protected float damage = 20f;
     public Transform Target { set { target = value; } }
     protected enum State { Active, Dead}
     protected State currentState;
@@ -34,8 +34,8 @@ public class Enemy : MonoBehaviour
     public virtual void OnEnable()
     {
         animator.Play("Idle", 0, 0f);
-         objectCollider.enabled = true;
-          SoundManager.instance.Play("asteroid_appear");
+        objectCollider.enabled = true;
+        SoundManager.instance.Play(appearSoundName);
         health.InitializeHealth();
         currentState = State.Active;
     }
@@ -46,7 +46,6 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator DestroyCoroutine()
     {
-        currentState = State.Dead;
         SoundManager.instance.Play(destroySoundName);
         onDeath?.Invoke(transform);
         objectCollider.enabled = false;
@@ -56,7 +55,4 @@ public class Enemy : MonoBehaviour
         gameObject.SetActive(false);
     }
     public virtual void PositionEnemy(){}
-    
 }
- 
- 
