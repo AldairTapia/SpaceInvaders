@@ -37,27 +37,9 @@ MonoBehaviour:
     enemiesData:
     - enemyPrefab: {fileID: 7589301131686965238, guid: aa0ed3a7b60826f4bafa819a20f840f3, type: 3}
       spawnTime: 3
-    - enemyPrefab: {fileID: 7589301131686965238, guid: aa0ed3a7b60826f4bafa819a20f840f3, type: 3}
-      spawnTime: 3
-    - enemyPrefab: {fileID: 7589301131686965238, guid: aa0ed3a7b60826f4bafa819a20f840f3, type: 3}
-      spawnTime: 6
-    - enemyPrefab: {fileID: 7589301131686965238, guid: aa0ed3a7b60826f4bafa819a20f840f3, type: 3}
-      spawnTime: 6
-    - enemyPrefab: {fileID: 7589301131686965238, guid: aa0ed3a7b60826f4bafa819a20f840f3, type: 3}
-      spawnTime: 6
     - enemyPrefab: {fileID: 380972534816340816, guid: 4e67a2d1953755d4186ef6f588846aa4, type: 3}
-      spawnTime: 10
-  - musicname: 
-    enemiesData:
-    - enemyPrefab: {fileID: 7589301131686965238, guid: aa0ed3a7b60826f4bafa819a20f840f3, type: 3}
       spawnTime: 3
-    - enemyPrefab: {fileID: 7589301131686965238, guid: aa0ed3a7b60826f4bafa819a20f840f3, type: 3}
-      spawnTime: 3
-    - enemyPrefab: {fileID: 7589301131686965238, guid: aa0ed3a7b60826f4bafa819a20f840f3, type: 3}
+    - enemyPrefab: {fileID: 380972534816340816, guid: 4e67a2d1953755d4186ef6f588846aa4, type: 3}
       spawnTime: 6
     - enemyPrefab: {fileID: 7589301131686965238, guid: aa0ed3a7b60826f4bafa819a20f840f3, type: 3}
       spawnTime: 6
-    - enemyPrefab: {fileID: 380972534816340816, guid: 4e67a2d1953755d4186ef6f588846aa4, type: 3}
-      spawnTime: 10
-    - enemyPrefab: {fileID: 380972534816340816, guid: 4e67a2d1953755d4186ef6f588846aa4, type: 3}
-      spawnTime: 10
